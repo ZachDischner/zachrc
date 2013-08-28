@@ -1,0 +1,2 @@
+# redirect all config to .zachrc directory:
+source ~/.zachrc/.zshrc

@@ -1,0 +1,98 @@
+# Clean mac terminal logs
+alias clean='sudo rm /var/log/asl/*.asl'
+
+# make verbose:
+alias rm='rm -v'
+alias cp='cp -v'
+alias mv='mv -v'
+
+# interactive
+alias copy='cp -vi'
+alias remove='rm -vi'
+alias move='mv -vi'
+
+# ls:
+alias ls='ls --color=auto'
+alias lh='ls -lah'                # human readable (sizes) long and all ;-)
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias lls='ls -l -h -g -F --color=auto'
+alias lc='ls -aCF'
+alias lsam='ls -am'               # List files horizontally
+alias lr='ls -lR'                 # recursive
+alias lsx='ls -ax'                # sort right to left rather then in columns
+alias lss='ls -shAxSr'            # sort by size
+alias lt='ls -lAtrh'              # sort by date and human readable
+alias lm='ls -al |more'           # pipe through 'more'
+
+alias codehome="~/ZachCodeProjects"
+alias school="cd /Users/zachdischner/Desktop/Dropbox/School/SchoolCode/"
+alias ASEN5010="school && cd ASEN\ 5010-Spacecraft\ Attitude\ Dynamics\ and\ Control/"
+alias webspace="codehome; cd webspace"
+alias today='date +"%A, %B %-d, %Y"'
+alias free="vm_stat"
+alias passwords="sudo subl ~/Desktop/Dropbox/.secrets/passwords.txt"
+
+alias ison="codehome; cd Daystar/ison-cdh"
+alias isoneps="codehome; cd Daystar/ison-eps"
+alias swri='ssh -X dischnerz@ssh.boulder.swri.edu'
+alias swriproxy='ssh dischnerz@ssh.boulder.swri.edu -L 8080:perseus.boulder.swri.edu:8080'
+alias white="sudo ifconfig en0 192.168.0.10 && ssh -X 192.168.0.12"
+alias LASP="ssh -X dischner@trifid.lasp.colorado.edu"
+alias google="ping www.google.com"
+
+# cd:
+alias back='cd $OLDPWD; ls'
+alias home='cd; ls'
+alias cd..='cd ..; ls'
+alias ..='cd ..; ls'
+alias ...='cd ../..; ls'
+alias ....='cd ../../..; ls'
+alias .....='cd ../../../..; ls'
+
+# Python:
+alias pylab='ipython --pylab'
+
+# git:
+alias gpull='git pull'
+alias gpush='git push'
+alias gstat='git status'
+alias gcommit='git commit'
+alias gbr='git branch -v'
+alias remote='git remove -v'
+alias graph="git log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)— %an%C(reset)' --abbrev-commit"
+
+
+# tar:
+alias tar='tar -cf'
+alias tarz='tar -cfz'
+alias tarb='tar -cfj'
+alias untar='tar -xvf'
+alias untarz='tar -xvfz'
+alias untarb='tar -xvfj'
+alias lstar='tar -tzf'
+
+# nano:
+alias nano='nano -w'
+
+# df:
+alias df='df -T'
+alias dfh='df -hT'
+
+# chmod:
+alias 777='chmod 777'
+alias 000='chmod 000'
+alias 644='chmod 644'
+alias 755='chmod 755'
+alias mx='chmod a+x'
+
+# Edit files:
+alias ebashrc='subl ~/.bashrc &'
+alias ezshrc='subl ~/.zachrc/.zshrc &'
+alias ealias='subl ~/.zachrc/.alias &'
+
+
+# Update environment:
+alias upenv='source ~/.zshrc'
+

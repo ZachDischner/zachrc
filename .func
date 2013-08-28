@@ -1,0 +1,77 @@
+###################################################
+# Special Functions:
+###################################################
+extract () {
+	if [ -f $1 ] ; then
+		case $1 in
+			*.tar.bz2)	tar xjf $1		;;
+			*.tar.gz)	tar xzf $1		;;
+			*.bz2)		bunzip2 $1		;;
+			*.rar)		rar x $1		;;
+			*.gz)		gunzip $1		;;
+			*.tar)		tar xf $1		;;
+			*.tbz2)		tar xjf $1		;;
+			*.tgz)		tar xzf $1		;;
+			*.zip)		unzip $1		;;
+			*.Z)		uncompress $1	;;
+			*.7z)       7z x $1         ;;
+			*)			echo "'$1' cannot be extracted via extract()" ;;
+		esac
+	else
+		echo "'$1' is not a valid file"
+	fi
+}
+
+psgrep() {
+	if [ ! -z $1 ] ; then
+		echo "Grepping for processes matching $1..."
+		ps aux | grep $1 | grep -v grep
+	else
+		echo "!! Need name to grep for"
+	fi
+}
+
+netinfo ()
+{
+echo "--------------- Network Information ---------------"
+echo ip:`myip`;
+/sbin/ifconfig | awk /'inet addr/ {print $2}' | head -1
+/sbin/ifconfig | awk /'Bcast/ {print $3}'| head -1
+/sbin/ifconfig | awk /'inet addr/ {print $4}'| head -1
+/sbin/ifconfig | awk /'HWaddr/ {print $4,$5}'| head -1
+echo "---------------------------------------------------"
+}
+
+ram () {
+
+#TOTALMEM=`free -m -t | grep Total: | awk '{print $2}'`
+#FREEMEM=`free -m -t | grep Total: | awk '{print $4}'`
+#USEDMEM=`free -m -t | grep Total: | awk '{print $3}'`
+echo "Used Memory: $USEDMEM MB / $TOTALMEM MB"
+echo "Free Memory: $FREEMEM MB / $TOTALMEM MB"
+
+}
+
+spin ()
+{
+echo -ne "${RED}-"
+echo -ne "${WHITE}\b|"
+echo -ne "${BLUE}\bx"
+sleep .02
+echo -ne "${RED}\b+${NC}"
+}
+
+# clock - A bash clock that can run in your terminal window. 
+clock () 
+{ 
+while true;do clear;echo "===========";date +"%r";echo "===========";sleep 1;done 
+}
+
+dirsize ()
+{
+du -shx * .[a-zA-Z0-9_]* 2> /dev/null | \
+egrep '^ *[0-9.]*[MG]' | sort -n > /tmp/list
+egrep '^ *[0-9.]*M' /tmp/list
+egrep '^ *[0-9.]*G' /tmp/list
+rm /tmp/list
+}
