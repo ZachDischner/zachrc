@@ -18,5 +18,9 @@ Install `.zachrc`:
 Open a new terminal or run:
 
     source ~/.zshrc
+
+To migrate an encrypted file (say full of keychains),
+
+zip -e safe.zip file/Files*
     
 ####Enjoy!

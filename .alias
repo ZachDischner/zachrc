@@ -1,6 +1,10 @@
 # Clean mac terminal logs
 alias clean='sudo rm /var/log/asl/*.asl'
 
+# Hide or show hidden Files
+alias showall='defaults write com.apple.Finder AppleShowAllFiles TRUE && killall Finder'
+alias hideall='defaults write com.apple.Finder AppleShowAllFiles FALSE && killall Finder'
+
 # make verbose:
 alias rm='rm -v'
 alias cp='cp -v'
@@ -12,7 +16,6 @@ alias remove='rm -vi'
 alias move='mv -vi'
 
 # ls:
-alias ls='ls --color=auto'
 alias lh='ls -lah'                # human readable (sizes) long and all ;-)
 alias ll='ls -alF'
 alias la='ls -A'
