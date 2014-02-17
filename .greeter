@@ -11,14 +11,6 @@ TIME=`uptime | awk '{print $1}'`
 TOTALMEM=`free -m -t | grep Total: | awk '{print $2}'`
 USEDMEM=`free -m -t | grep Total: | awk '{print $3}'`
 MEM=`echo $USEDMEM"M" / $TOTALMEM"M"`
-USEDDATA=`dfh | grep Raid | awk '{print $4}'`
-TOTALDATA=`dfh | grep Raid | awk '{print $3}'`
-DATA=`echo $USEDDATA / $TOTALDATA`
-USEDROOT=`dfh | grep rootfs | awk '{print $4}'`
-TOTALROOT=`dfh | grep rootfs | awk '{print $3}'`
-ROOT=`echo $USEDROOT / $TOTALROOT`
-ADDR=`/sbin/ifconfig | awk /'inet addr/ {print $2}' | head -1`
-ADDR=${ADDR:5:50}
 echo "
                                                 ___ 
      \"May the force be with you.\"            ,o88888      
@@ -30,12 +22,12 @@ echo "
             , ..:.::o:ooOoOO8O888O8O,COCOO\"    `echo -e "Hostname: $HOSTNAME"`
            , . ..:.::o:ooOoOOOO8OOOOCOCO\"            `echo -e "OS: $OS"`
             . ..:.::o:ooOoOoOO8O8OCCCC\"o         `echo -e "Kernel: $KERNEL"`
-               . ..:.::o:ooooOoCoCCC\"o:o         `echo -e "LAN IP: $ADDR"`
-               . ..:.::o:o:,cooooCo\"oo:o:         `echo -e "Shell: $SHELL"`
-            \`   . . ..:.:cocoooo\"'o:o:::'           `echo -e "CPU: $CPU"`
-            .\`   . ..::ccccoc\"'o:o:o:::'            `echo -e "RAM: $MEM"`
-           :.:.    ,c:cccc\"':.:.:.:.:.'            `echo -e "Root: $ROOT"`
-         ..:.:\"'\`::::c:\"'..:.:.:.:.:.'             `echo -e "Data: $DATA"`
+               . ..:.::o:ooooOoCoCCC\"o:o          `echo -e "Shell: $SHELL"`
+               . ..:.::o:o:,cooooCo\"oo:o:           `echo -e "CPU: $CPU"`
+            \`   . . ..:.:cocoooo\"'o:o:::'          `echo -e "RAM: $MEM"`
+            .\`   . ..::ccccoc\"'o:o:o:::'            
+           :.:.    ,c:cccc\"':.:.:.:.:.'            
+         ..:.:\"'\`::::c:\"'..:.:.:.:.:.'             
        ...:.'.:.::::\"'    . . . . .'               
       .. . ....:.\"' \`   .  . . ''                  
     . . . ....\"'                                  

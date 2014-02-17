@@ -9,8 +9,8 @@ ZSH_THEME="jonathan"
 #cool themes are "fox" "jonathan" "josh" (nicely laid out, perfect for rails), "fino-time" "nanotech" 
 
 # Example aliases
-alias zshconfig="mate ~/.zshrc"
-alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="subl ~/.zshrc"
+alias ohmyzsh="subl ~/.oh-my-zsh"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -37,7 +37,10 @@ plugins=(git rails3 ruby python github git-flow osx sublime themes debian gem br
 
 source $ZSH/oh-my-zsh.sh
 
+# To work with brew
+PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+
 # Customize to your needs...
-source ~/.zachrc/.alias
-source ~/.zachrc/.func
-source ~/.zachrc/.greeter
+source $HOME/.zachrc/.alias
+source $HOME/.zachrc/.func
+source $HOME/.zachrc/.greeter

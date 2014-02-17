@@ -1,5 +1,49 @@
+#  Zach's Environment and stuff
+export CODE=$HOME/code
+alias codehome='cd $CODE'
+export DESKTOP=$HOME/Desktop
+alias godesktop='cd $DESKTOP'
+alias odesktop='open $DESKTOP'
+export DROPBOX=$DESKTOP/Dropbox
+alias godropbox='cd $DROPBOX'
+alias odropbox='open $DROPBOX'
+alias stuff='open $DROPBOX/.stuff'
+export DRIVE=$HOME/Google\ Drive
+alias godrive='cd $DRIVE'
+alias odrive='open $DRIVE'
+
+# Code projects
+export DAYSTAR=$CODE/DayStar
+	alias godaystar='cd $DAYSTAR'
+	alias odaystar='open $DAYSTAR'
+export OTCCD=$DAYSTAR/OTCCD
+	alias gootccd='cd $OTCCD'
+	alias ootccd='open $OTCCD'
+
+
+# Some python aliases
+alias syspython='/usr/bin/python'
+alias ip='ipython --pylab'
+alias ipn='ipython notebook --pylab inline'
+
+	#Canopy/Enthought setup:   http://docs.enthought.com/canopy/configure/canopy-cli.html
+	# run <canopycli setup $DIR > to make local executable enthought python area
+	# Make this default by "Please set /Users/zachdischner/code/pythons/pythonEnth/bin in your PATH."
+	alias canopycli='/Applications/Canopy.app/Contents/MacOS/Canopy_cli' 
+	alias enpython='$CODE/pythons/pythonEnth/bin/python'
+	alias enipython='$CODE/pythons/pythonEnth/bin/ipython'
+	alias enpkg='$CODE/pythons/pythonEnth/bin/enpkg'   #ex >>enpkg pandas
+	alias enipn='enipython notebook --pylab inline'
+
+
+# Applications
+alias spotify="open /Applications/Spotify.app"
+
 # Clean mac terminal logs
 alias clean='sudo rm /var/log/asl/*.asl'
+
+# Classes
+export SCHOOL=$DROPBOX/School/SchoolCode
 
 # Hide or show hidden Files
 alias showall='defaults write com.apple.Finder AppleShowAllFiles TRUE && killall Finder'
@@ -29,16 +73,15 @@ alias lss='ls -shAxSr'            # sort by size
 alias lt='ls -lAtrh'              # sort by date and human readable
 alias lm='ls -al |more'           # pipe through 'more'
 
-alias codehome="~/ZachCodeProjects"
+
 alias school="cd /Users/zachdischner/Desktop/Dropbox/School/SchoolCode/"
 alias ASEN5010="school && cd ASEN\ 5010-Spacecraft\ Attitude\ Dynamics\ and\ Control/"
-alias webspace="codehome; cd webspace"
+alias webspace="CODEHOME; cd webspace"
 alias today='date +"%A, %B %-d, %Y"'
 alias free="vm_stat"
 alias passwords="sudo subl ~/Desktop/Dropbox/.secrets/passwords.txt"
 
-alias ison="codehome; cd Daystar/ison-cdh"
-alias isoneps="codehome; cd Daystar/ison-eps"
+alias ison="cd $CODEHOME/ison-cdh"
 alias swri='ssh -X dischnerz@ssh.boulder.swri.edu'
 alias swriproxy='ssh dischnerz@ssh.boulder.swri.edu -L 8080:perseus.boulder.swri.edu:8080'
 alias white="sudo ifconfig en0 192.168.0.10 && ssh -X 192.168.0.12"
@@ -79,6 +122,9 @@ alias lstar='tar -tzf'
 # nano:
 alias nano='nano -w'
 
+# sublime	
+alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+
 # df:
 alias df='df -T'
 alias dfh='df -hT'
@@ -94,6 +140,7 @@ alias mx='chmod a+x'
 alias ebashrc='subl ~/.bashrc &'
 alias ezshrc='subl ~/.zachrc/.zshrc &'
 alias ealias='subl ~/.zachrc/.alias &'
+alias zachrc='subl ~/.zachrc &'
 
 
 # Update environment:
