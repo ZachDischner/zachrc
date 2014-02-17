@@ -9,7 +9,7 @@ Install me brah!:
 Go to you home directory and clone `.zachrc`:
 
     cd ~
-    git clone git@github.com:dinkelk/.zachrc
+    git clone git@github.com:ZachDischner/zachrc .zachrc
 
 Install `.zachrc`:
 
