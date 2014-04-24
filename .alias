@@ -1,6 +1,9 @@
 
 #######  Zach's Environment setup!!!
 
+###### Consolodating
+alias edit='subl'
+
 ###### Base locations
 export CODE=$HOME/code
 export DESKTOP=$HOME/Desktop
@@ -9,7 +12,8 @@ export DRIVE=$HOME/Google\ Drive
 
 
 ###### Nav aliases
-alias codehome='cd $CODE'
+alias gocode='cd $CODE'
+alias ocode='open $CODE'
 alias godesktop='cd $DESKTOP'
 alias odesktop='open $DESKTOP'
 alias godropbox='cd $DROPBOX'
@@ -19,9 +23,10 @@ alias godrive='cd $DRIVE'
 alias odrive='open $DRIVE'
 
 ###### SwRI
-SwRI
 alias ixion='ssh -X dischnerz@ixion.boulder.swri.edu'
-export IXION=$DRIVE/ixion
+export IXION=$HOME/ixion
+alias goixion='cd $IXION'
+export 
 alias upixion="rsync -avz -e ssh $IXION dischnerz@ixion.boulder.swri.edu:'/home/dischnerz/'"
 alias swri='ssh -X dischnerz@ssh.boulder.swri.edu'
 alias swriproxy='ssh dischnerz@ssh.boulder.swri.edu -L 8080:perseus.boulder.swri.edu:8080'
@@ -46,11 +51,11 @@ alias ipn='ipython notebook --pylab inline'
 
 	#Canopy/Enthought setup:   http://docs.enthought.com/canopy/configure/canopy-cli.html
 	# run <canopycli setup $DIR > to make local executable enthought python area
-	# Make this default by "Please set /Users/zachdischner/code/pythons/pythonEnth/bin in your PATH."
+	# Make this default by "Please set $CODE/pythons/EnthoughtPython/bin in your PATH."
 	alias canopycli='/Applications/Canopy.app/Contents/MacOS/Canopy_cli' 
-	alias enpython='$CODE/pythons/pythonEnth/bin/python'
-	alias enipython='$CODE/pythons/pythonEnth/bin/ipython'
-	alias enpkg='$CODE/pythons/pythonEnth/bin/enpkg'   #ex >>enpkg pandas
+	alias enpython='$CODE/pythons/EnthoughtPython/bin/python'
+	alias enipython='$CODE/pythons/EnthoughtPython/bin/ipython'
+	alias enpkg='$CODE/pythons/EnthoughtPython/bin/enpkg'   #ex >>enpkg pandas
 	alias enipn='enipython notebook --pylab inline'
 
 
@@ -97,7 +102,7 @@ alias ASEN5010="school && cd ASEN\ 5010-Spacecraft\ Attitude\ Dynamics\ and\ Con
 alias webspace="CODEHOME; cd webspace"
 alias today='date +"%A, %B %-d, %Y"'
 alias free="vm_stat"
-alias passwords="sudo cd . && subl $DROPBOX/.secrets/passwords.txt"
+alias passwords="sudo cd . && edit $DROPBOX/.secrets/passwords.txt"
 
 alias ison="cd $CODEHOME/ison-cdh"
 alias white="sudo ifconfig en0 192.168.0.10 && ssh -X 192.168.0.12"
@@ -153,10 +158,10 @@ alias 755='chmod 755'
 alias mx='chmod a+x'
 
 # Edit files:
-alias ebashrc='subl ~/.bashrc &'
-alias ezshrc='subl ~/.zachrc/.zshrc &'
-alias ealias='subl ~/.zachrc/.alias &'
-alias ezachrc='subl ~/.zachrc &'
+alias ebashrc='edit ~/.bashrc &'
+alias ezshrc='edit ~/.zachrc/.zshrc &'
+alias ealias='edit ~/.zachrc/.alias &'
+alias ezachrc='edit ~/.zachrc &'
 
 
 # Update environment:

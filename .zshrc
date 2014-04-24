@@ -33,12 +33,15 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rails3 ruby python github git-flow osx sublime themes debian gem brew battery rvm lol virtualenvwrapper)
+plugins=(git rails ruby python github git-flow osx sublime themes debian gem brew battery rvm lol virtualenvwrapper)
 
 source $ZSH/oh-my-zsh.sh
 
 # To work with brew
 PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+
+# To find cabal (Haskell) installed executables
+export PATH=~/.cabal/bin:$PATH
 
 # Customize to your needs...
 source $HOME/.zachrc/.alias
