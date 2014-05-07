@@ -16,3 +16,8 @@ curl -L http://install.ohmyz.sh | sh
 sudo pip install pyodbc simplejson
 pip install numpy scipy pandas
 
+### Setup git  
+git config --global user.email "zach.dischner@colorado.edu"
+git config --global user.name "ZachDischner"
+ssh-keygen
+
