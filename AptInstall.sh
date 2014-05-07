@@ -7,7 +7,7 @@ sudo apt-get update
 sudo apt-get install sublime-text-installer	
 
 ### Now install all of the system thingies we need	
-sudo apt-get install zsh htop curl wget subversion python-pip
+sudo apt-get install zsh htop curl wget subversion python-pip yakuake
 
 ### Oh-My-Zshell
 curl -L http://install.ohmyz.sh | sh
