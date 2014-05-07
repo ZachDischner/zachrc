@@ -43,6 +43,9 @@ PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 # To find cabal (Haskell) installed executables
 export PATH=~/.cabal/bin:$PATH
 
+# ULDTSFX=USERNAME 
+/home/odus/SwRI/dtt/dataTrack/modules/dtt_permdefs.py socwebauth=null
+
 # Customize to your needs...
 source $HOME/.zachrc/.alias
 source $HOME/.zachrc/.func

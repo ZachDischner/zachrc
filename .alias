@@ -3,24 +3,27 @@
 
 ###### Consolodating
 alias edit='subl'
+alias openfile='nautilus'
 
 ###### Base locations
-export CODE=$HOME/code
 export DESKTOP=$HOME/Desktop
-export DROPBOX=$HOME/Dropbox
-export DRIVE=$HOME/Google\ Drive
+export SWRI=$HOME/SwRI
+export DTT=$SWRI/dtt
 
 
 ###### Nav aliases
+alias goswri='cd $SWRI'
+alias oswri='openfile $SWRI'
+alias godtt='cd $DTT'
+alias odtt='openfile $DTT'
+alias edtt='edit $DTT'
+
 alias gocode='cd $CODE'
-alias ocode='open $CODE'
+alias ocode='openfile $CODE'
 alias godesktop='cd $DESKTOP'
-alias odesktop='open $DESKTOP'
+alias odesktop='openfile $DESKTOP'
 alias godropbox='cd $DROPBOX'
-alias odropbox='open $DROPBOX'
-alias stuff='open $DROPBOX/.stuff'
-alias godrive='cd $DRIVE'
-alias odrive='open $DRIVE'
+alias odropbox='openfile $DROPBOX'
 
 ###### SwRI
 alias ixion='ssh -X dischnerz@ixion.boulder.swri.edu'
@@ -38,10 +41,10 @@ alias swriproxy='ssh dischnerz@ssh.boulder.swri.edu -L 8080:perseus.boulder.swri
 # Code projects
 export DAYSTAR=$CODE/DayStar
 	alias godaystar='cd $DAYSTAR'
-	alias odaystar='open $DAYSTAR'
+	alias odaystar='openfile $DAYSTAR'
 export OTCCD=$DAYSTAR/OTCCD
 	alias gootccd='cd $OTCCD'
-	alias ootccd='open $OTCCD'
+	alias ootccd='openfile $OTCCD'
 
 
 # Some python aliases
@@ -60,17 +63,7 @@ alias ipn='ipython notebook --pylab inline'
 
 
 # Applications
-alias spotify="open /Applications/Spotify.app"
 
-# Clean mac terminal logs
-alias clean='sudo rm /var/log/asl/*.asl'
-
-# Classes
-export SCHOOL=$DROPBOX/School/SchoolCode
-
-# Hide or show hidden Files
-alias showall='defaults write com.apple.Finder AppleShowAllFiles TRUE && killall Finder'
-alias hideall='defaults write com.apple.Finder AppleShowAllFiles FALSE && killall Finder'
 
 # make verbose:
 alias rm='rm -v'
@@ -96,13 +89,9 @@ alias lss='ls -shAxSr'            # sort by size
 alias lt='ls -lAtrh'              # sort by date and human readable
 alias lm='ls -al |more'           # pipe through 'more'
 
-
-alias school="cd /Users/zachdischner/Desktop/Dropbox/School/SchoolCode/"
-alias ASEN5010="school && cd ASEN\ 5010-Spacecraft\ Attitude\ Dynamics\ and\ Control/"
-alias webspace="CODEHOME; cd webspace"
 alias today='date +"%A, %B %-d, %Y"'
 alias free="vm_stat"
-alias passwords="sudo cd . && edit $DROPBOX/.secrets/passwords.txt"
+
 
 alias ison="cd $CODEHOME/ison-cdh"
 alias white="sudo ifconfig en0 192.168.0.10 && ssh -X 192.168.0.12"
@@ -142,9 +131,6 @@ alias lstar='tar -tzf'
 
 # nano:
 alias nano='nano -w'
-
-# sublime	
-alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 
 # df:
 alias df='df -T'
