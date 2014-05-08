@@ -29,7 +29,6 @@ alias odropbox='openfile $DROPBOX'
 alias ixion='ssh -X dischnerz@ixion.boulder.swri.edu'
 export IXION=$HOME/ixion
 alias goixion='cd $IXION'
-export 
 alias upixion="rsync -avz -e ssh $IXION dischnerz@ixion.boulder.swri.edu:'/home/dischnerz/'"
 alias swri='ssh -X dischnerz@ssh.boulder.swri.edu'
 alias swriproxy='ssh dischnerz@ssh.boulder.swri.edu -L 8080:perseus.boulder.swri.edu:8080'
@@ -90,7 +89,7 @@ alias lt='ls -lAtrh'              # sort by date and human readable
 alias lm='ls -al |more'           # pipe through 'more'
 
 alias today='date +"%A, %B %-d, %Y"'
-alias free="vm_stat"
+#alias free="vmstat"
 
 
 alias ison="cd $CODEHOME/ison-cdh"
