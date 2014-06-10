@@ -6,11 +6,12 @@ brew install python
 	brew install gfortran
 	pip install scipy
 	brew install freetype
-	pip install matplotlib   (might require a few upenvs and whatnot)
 	pip install ipython
 	pip install pandas
 	pip install bitstring
 	pip install xlrd
+	pip install openpyxl
+	pip install matplotlib   (might require a few upenvs and whatnot)
 
 # install the QT libraries as described 
 # in the text below before continuing

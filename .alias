@@ -25,6 +25,9 @@ alias godrive='cd $DRIVE'
 alias odrive='open $DRIVE'
 
 ###### SwRI
+export SWRI=$CODE/SwRI
+alias goswri='cd $SWRI'
+alias oswri='open $SWRI'
 alias ixion='ssh -X dischnerz@ixion.boulder.swri.edu'
 export IXION=$HOME/ixion
 alias goixion='cd $IXION'
