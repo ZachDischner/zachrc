@@ -1,5 +1,10 @@
 #!/bin/sh
 
+### Setup git  (probably need to do this first)
+#git config --global user.email "zach.dischner@colorado.edu"
+#git config --global user.name "ZachDischner"
+#ssh-keygen
+
 ./AptInstall.sh
 
 chmod a+x -R ./
