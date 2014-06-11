@@ -7,8 +7,15 @@ alias openfile='nautilus'
 
 ###### Base locations
 export DESKTOP=$HOME/Desktop
+
 export SWRI=$HOME/SwRI
 export DTT=$SWRI/dtt
+
+export DROPBOX=$HOME/Dropbox
+export DRIVE=$HOME/Google\ Drive
+# Used for python utils
+export ZDUTILS=$CODE/ZD_Utils
+
 
 
 ###### Nav aliases
@@ -26,6 +33,9 @@ alias godropbox='cd $DROPBOX'
 alias odropbox='openfile $DROPBOX'
 
 ###### SwRI
+export SWRI=$CODE/SwRI
+alias goswri='cd $SWRI'
+alias oswri='open $SWRI'
 alias ixion='ssh -X dischnerz@ixion.boulder.swri.edu'
 export IXION=$HOME/ixion
 alias goixion='cd $IXION'
@@ -34,7 +44,7 @@ alias upixion="rsync -avz -e ssh $IXION dischnerz@ixion.boulder.swri.edu:'/home/
 alias swri='ssh -X dischnerz@ssh.boulder.swri.edu'
 alias swriproxy='ssh dischnerz@ssh.boulder.swri.edu -L 8080:perseus.boulder.swri.edu:8080'
 	# Printers
-	# Titan, 
+	# Titan, 5th floor
 	alias swrititan='ssh dischnerz@ssh.boulder.swri.edu -L 9099:titan:9100'
 	alias swriprinters='ssh -L 9099:titan:9100 -L 9101:uranus:9100 -L 9102:poster:9100 dischnerz@ssh.boulder.swri.edu'
 
@@ -48,6 +58,8 @@ export OTCCD=$DAYSTAR/OTCCD
 
 
 # Some python aliases
+alias setuppythondoxygen='cp $HOME/.zachrc/Files/Doxyfile-Python Doxyfile'
+alias newpythonproject="echo 'do this more intelligently in a python call...' && mkdir Output && mkdir Input && setuppythondoxygen && cp $HOME/.zachrc/Files/Template.py $1"
 alias syspython='/usr/bin/python'
 alias ip='ipython --pylab'
 alias ipn='ipython notebook --pylab inline'

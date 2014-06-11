@@ -43,8 +43,13 @@ PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 # To find cabal (Haskell) installed executables
 export PATH=~/.cabal/bin:$PATH
 
+
 # ULDTSFX=USERNAME 
 /home/odus/SwRI/dtt/dataTrack/modules/dtt_permdefs.py socwebauth=null
+
+# To put doxypypy in my path
+export PYTHONPATH=$PYTHONPATH:~/.zachrc/Files/doxypypy
+export PATH=$PATH:~/.zachrc/Files/EXECUTABLES
 
 # Customize to your needs...
 source $HOME/.zachrc/.alias
