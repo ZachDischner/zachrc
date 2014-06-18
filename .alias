@@ -9,6 +9,7 @@ export CODE=$HOME/code
 export DESKTOP=$HOME/Desktop
 export DROPBOX=$HOME/Dropbox
 export DRIVE=$HOME/Google\ Drive
+export ZACHRC=$HOME/.zachrc
 # Used for python utils
 export ZDUTILS=$CODE/ZD_Utils
 
@@ -23,6 +24,8 @@ alias odropbox='open $DROPBOX'
 alias stuff='open $DROPBOX/.stuff'
 alias godrive='cd $DRIVE'
 alias odrive='open $DRIVE'
+alias gozachrc='cd $ZACHRC'
+alias ozachrc='open $ZACHRC'
 
 ###### SwRI
 export SWRI=$CODE/SwRI

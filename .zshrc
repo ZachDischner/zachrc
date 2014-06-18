@@ -44,6 +44,7 @@ PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH=~/.cabal/bin:$PATH
 
 # To put doxypypy in my path
+#https://github.com/Feneric/doxypypy
 export PYTHONPATH=$PYTHONPATH:~/.zachrc/Files/doxypypy
 export PATH=$PATH:~/.zachrc/Files/EXECUTABLES
 
