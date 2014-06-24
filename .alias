@@ -53,7 +53,7 @@ export OTCCD=$DAYSTAR/OTCCD
 
 
 # Some python aliases
-alias setuppythondoxygen='cp $HOME/.zachrc/Files/Doxyfile-Python Doxyfile'
+alias setuppythondoxygen='cp -r $HOME/.zachrc/Files/doc doc'
 alias newpythonproject="echo 'do this more intelligently in a python call...' && mkdir Output && mkdir Input && setuppythondoxygen && cp $HOME/.zachrc/Files/Template.py $1"
 alias syspython='/usr/bin/python'
 alias ip='ipython --pylab'

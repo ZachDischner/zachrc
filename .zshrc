@@ -45,8 +45,8 @@ export PATH=~/.cabal/bin:$PATH
 
 # To put doxypypy in my path
 #https://github.com/Feneric/doxypypy
-export PYTHONPATH=$PYTHONPATH:~/.zachrc/Files/doxypypy
-export PATH=$PATH:~/.zachrc/Files/EXECUTABLES
+#export PYTHONPATH=$PYTHONPATH:~/.zachrc/Files/doxypypy
+#export PATH=$PATH:~/.zachrc/Files/EXECUTABLES
 
 # Customize to your needs...
 source $HOME/.zachrc/.alias
