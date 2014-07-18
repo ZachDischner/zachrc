@@ -8,17 +8,14 @@ __maintainer__ = "Zach Dischner"
 __email__ = "zach.dischner@gmail.com"
 __status__ = "Dev"
 
-"""=
-File name: .py
+"""
+File name: ReportParse.py
 Authors: Zach Dischner
-Created: 5/14/2014
-
-@breif:
-	
+Created: 7/18/2014
+Modified: 7/18/2014
 
 
-@todos Do it
-
+Todos:
 
 """
 
@@ -26,3 +23,26 @@ Created: 5/14/2014
 # --- IMPORT AND GLOBAL ---
 # -------------------------
 import sys, os, string
+
+
+# -----------------
+# --- importSSF ---
+# -----------------
+def SampleMethod(arg1, kwarg1=column_keys):
+	"""Does Stuff
+
+	Here is how, blah blah blah
+
+	Args: 
+		arg1: A list of strings with paths to tuples of lists of tuples of apples
+
+	Kwargs:
+		kwarg1:	If you set this to 897234, return None
+
+	Returns:
+		surprise:	A suprise
+
+	Examples:
+	   	huh = SampleMethod(fname)
+	"""
+	return 0

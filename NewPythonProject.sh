@@ -19,4 +19,5 @@ alias setuppythondoxygen
 alias setuppythonzdutil
 setuppythondoxygen
 setuppythonzdutil
-cp $HOME/.zachrc/Files/Template.py $1
+cp $HOME/.zachrc/Files/Template.py $1.py
+cp $HOME/.zachrc/Files/README_Template.md README.md
