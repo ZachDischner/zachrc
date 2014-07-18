@@ -28,7 +28,7 @@ alias gozachrc='cd $ZACHRC'
 alias ozachrc='open $ZACHRC'
 
 ###### SwRI
-export SWRI=$CODE/SwRI
+export SWRI=$HOME/SwRI
 alias goswri='cd $SWRI'
 alias oswri='open $SWRI'
 alias ixion='ssh -X dischnerz@ixion.boulder.swri.edu'
@@ -53,8 +53,11 @@ export OTCCD=$DAYSTAR/OTCCD
 
 
 # Some python aliases
-alias setuppythondoxygen='cp -r $HOME/.zachrc/Files/doc doc'
-alias newpythonproject="echo 'do this more intelligently in a python call...' && mkdir Output && mkdir Input && setuppythondoxygen && cp $HOME/.zachrc/Files/Template.py $1"
+alias setuppythondoxygen='git submodule add https://github.com/ZachDischner/DoxyDocs.git doc'
+alias setuppythonzdutil='git submodule add git@github.com:ZachDischner/ZD-Utils.git ZD_Utils'
+#alias newpythonproject="echo 'do this more intelligently in a python call...' && git init $1 && cd $1 && mkdir Output && mkdir Input && touch .gitignore && touch README.md && setuppythondoxygen && setuppythonzdutil && cp $HOME/.zachrc/Files/Template.py $1"
+alias newpythonproject='$ZACHRC/NewPythonProject.sh'
+
 alias syspython='/usr/bin/python'
 alias ip='ipython --pylab'
 alias ipn='ipython notebook --pylab inline'
