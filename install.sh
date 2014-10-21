@@ -12,3 +12,13 @@ rm htop.zip
 
 echo "Now go import the VPN files included in .zachrc/VPN,  using the Network utility,if you're using a mac"
 echo "Can also extract the encrypted zip file with keychains in them and move to ~/Library/Keychains"
+
+
+# Sublime settings: ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings                                                                          1 ↵ ──(Tue,Oct21)─┘
+# {
+#     "color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+#     "font_size": 11,
+#     "tab_size": 4,
+#     "translate_tabs_to_spaces": true,
+#     "highlight_modified_tabs": true,
+# }

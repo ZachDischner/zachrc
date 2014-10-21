@@ -52,7 +52,7 @@ export OTCCD=$DAYSTAR/OTCCD
 	alias ootccd='open $OTCCD'
 
 
-# Some python aliases
+###### Python
 alias setuppythondoxygen='git submodule add https://github.com/ZachDischner/DoxyDocs.git doc'
 alias setuppythonzdutil='git submodule add git@github.com:ZachDischner/ZD-Utils.git ZD_Utils'
 #alias newpythonproject="echo 'do this more intelligently in a python call...' && git init $1 && cd $1 && mkdir Output && mkdir Input && touch .gitignore && touch README.md && setuppythondoxygen && setuppythonzdutil && cp $HOME/.zachrc/Files/Template.py $1"
@@ -60,7 +60,7 @@ alias newpythonproject='$ZACHRC/NewPythonProject.sh'
 
 alias syspython='/usr/bin/python'
 alias ip='ipython --pylab'
-alias ipn='ipython notebook --pylab inline'
+alias ipn='ipython notebook'
 
 	#Canopy/Enthought setup:   http://docs.enthought.com/canopy/configure/canopy-cli.html
 	# run <canopycli setup $DIR > to make local executable enthought python area
@@ -145,7 +145,6 @@ alias graph="git log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %
 
 
 # tar:
-alias tar='tar -cf'
 alias tarz='tar -cfz'
 alias tarb='tar -cfj'
 alias untar='tar -xvf'

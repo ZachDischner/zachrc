@@ -1,0 +1,18 @@
+brew install caskroom/cask/brew-cask
+
+
+# Brew Casks
+brew cask install google-chrome
+brew cask install dropbox
+brew cask install google-chrome
+brew cask install spotify
+brew cask install xee
+brew cask install transmission
+
+# development
+brew cask install sublime-text-3
+brew cask install filezilla
+brew cask install iterm2
+brew cask install source-tree
+brew cask install virtualbox
+brew cask install cyberduck

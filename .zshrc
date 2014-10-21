@@ -43,12 +43,12 @@ PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 # To find cabal (Haskell) installed executables
 export PATH=~/.cabal/bin:$PATH
 
-# To put doxypypy in my path
-#https://github.com/Feneric/doxypypy
-#export PYTHONPATH=$PYTHONPATH:~/.zachrc/Files/doxypypy
-#export PATH=$PATH:~/.zachrc/Files/EXECUTABLES
 
 # Customize to your needs...
 source $HOME/.zachrc/.alias
 source $HOME/.zachrc/.func
 source $HOME/.zachrc/.greeter
+
+# To find conda
+#echo "Using the anaconda python environment"
+export PATH="//anaconda/bin:$PATH"
