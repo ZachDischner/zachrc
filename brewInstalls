@@ -2,12 +2,16 @@ brew install caskroom/cask/brew-cask
 
 
 # Brew Casks
+brew cask install iterm2
 brew cask install google-chrome
 brew cask install dropbox
 brew cask install google-chrome
 brew cask install spotify
 brew cask install xee
 brew cask install transmission
+brew cask install adobe-photoshop-lightroom
+brew cask install vmware-fusion
+brew cask install bittorrent-sync
 
 # development
 brew cask install sublime-text-3

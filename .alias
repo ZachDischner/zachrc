@@ -30,8 +30,9 @@ alias ozachrc='open $ZACHRC'
 ###### SwRI
 export SWRI=$HOME/SwRI
 alias goswri='cd $SWRI'
+alais gomoc='cd $SWRI/CYGNSS/MOC'
 alias oswri='open $SWRI'
-alias ixion='ssh -X dischnerz@ixion.boulder.swri.edu'
+alias ixion='ssh -Y dischnerz@ixion.spaceops.swri.edu'
 export IXION=$HOME/ixion
 alias goixion='cd $IXION'
 export 

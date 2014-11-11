@@ -50,5 +50,5 @@ source $HOME/.zachrc/.func
 source $HOME/.zachrc/.greeter
 
 # To find conda
-#echo "Using the anaconda python environment"
+echo "Using the anaconda python environment"
 export PATH="//anaconda/bin:$PATH"
