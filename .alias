@@ -1,4 +1,3 @@
-
 #######  Zach's Environment setup!!!
 
 ###### Consolodating
@@ -30,7 +29,7 @@ alias ozachrc='open $ZACHRC'
 ###### SwRI
 export SWRI=$HOME/SwRI
 alias goswri='cd $SWRI'
-alais gomoc='cd $SWRI/CYGNSS/MOC'
+alias gomoc='cd $SWRI/CYGNSS/MOC'
 alias oswri='open $SWRI'
 alias ixion='ssh -Y dischnerz@ixion.spaceops.swri.edu'
 export IXION=$HOME/ixion
@@ -43,14 +42,6 @@ alias swriproxy='ssh dischnerz@ssh.boulder.swri.edu -L 8080:perseus.boulder.swri
 	# Titan, 5th floor
 	alias swrititan='ssh dischnerz@ssh.boulder.swri.edu -L 9099:titan:9100'
 	alias swriprinters='ssh -L 9099:titan:9100 -L 9101:uranus:9100 -L 9102:poster:9100 dischnerz@ssh.boulder.swri.edu'
-
-# Code projects
-export DAYSTAR=$CODE/DayStar
-	alias godaystar='cd $DAYSTAR'
-	alias odaystar='open $DAYSTAR'
-export OTCCD=$DAYSTAR/OTCCD
-	alias gootccd='cd $OTCCD'
-	alias ootccd='open $OTCCD'
 
 
 ###### Python
@@ -116,7 +107,8 @@ alias ASEN5010="school && cd ASEN\ 5010-Spacecraft\ Attitude\ Dynamics\ and\ Con
 alias webspace="CODEHOME; cd webspace"
 alias today='date +"%A, %B %-d, %Y"'
 alias free="vm_stat"
-alias passwords="sudo cd . && edit $DROPBOX/.secrets/passwords.txt"
+#alias passwords="sudo cd . && edit $DROPBOX/.secrets/passwords.txt"
+alias passwords="open /Applications/SQLiteManager.app $DROPBOX/passwords.sqlite"
 
 alias ison="cd $CODEHOME/ison-cdh"
 alias white="sudo ifconfig en0 192.168.0.10 && ssh -X 192.168.0.12"
@@ -176,7 +168,11 @@ alias ezshrc='edit ~/.zachrc/.zshrc &'
 alias ealias='edit ~/.zachrc/.alias &'
 alias ezachrc='edit ~/.zachrc &'
 
+# General
+alias historyg='history | grep '
+
 
 # Update environment:
 alias upenv='source ~/.zshrc'
+alias updatebrew='brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup'
 
