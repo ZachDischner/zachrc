@@ -3,6 +3,9 @@
 ###### Consolodating
 alias edit='subl'
 
+###### Neat!!!
+alias gitstats="$CODE/gitstats/gitstats"
+
 ###### Base locations
 export CODE=$HOME/code
 export DESKTOP=$HOME/Desktop
