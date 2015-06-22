@@ -1,5 +1,9 @@
 #######  Zach's Environment setup!!!
 
+###### For shits and giggles
+alias cat="lolcat"
+alias sl="echo '              Its '''ls''' you jackass, dont ever make this mistake again\n↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓what you meant↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓' | lolcat --animate --duration 3 && ls"
+
 ###### SwRI SSH
 alias startSwriVpn='/usr/bin/snx -s vpn.swri.org -u zdischner'
 alias stopSwriVPN='/usr/bin/snx -d'
@@ -45,7 +49,6 @@ alias oswri='open $SWRI'
 alias ixion='ssh -Y dischnerz@ixion.spaceops.swri.edu'
 export IXION=$HOME/ixion
 alias goixion='cd $IXION'
-export 
 alias upixion="rsync -avz -e ssh $IXION dischnerz@ixion.boulder.swri.edu:'/home/dischnerz/'"
 alias swri='ssh -X dischnerz@ssh.boulder.swri.edu'
 alias swriproxy='ssh dischnerz@ssh.boulder.swri.edu -L 8080:perseus.boulder.swri.edu:8080'
@@ -79,10 +82,8 @@ alias ipn='ipython notebook'
 alias spotify="open /Applications/Spotify.app"
 
 # Clean mac terminal logs
-alias clean='sudo rm /var/log/asl/*.asl'
+alias cleanme='sudo rm /var/log/asl/*.asl'
 
-# Classes
-export SCHOOL=$DROPBOX/School/SchoolCode
 
 # Hide or show hidden Files
 alias showall='defaults write com.apple.Finder AppleShowAllFiles TRUE && killall Finder'
@@ -113,17 +114,10 @@ alias lt='ls -lAtrh'              # sort by date and human readable
 alias lm='ls -al |more'           # pipe through 'more'
 
 
-alias school="cd /Users/zachdischner/Desktop/Dropbox/School/SchoolCode/"
-alias ASEN5010="school && cd ASEN\ 5010-Spacecraft\ Attitude\ Dynamics\ and\ Control/"
 alias webspace="CODEHOME; cd webspace"
 alias today='date +"%A, %B %-d, %Y"'
 alias free="vm_stat"
-#alias passwords="sudo cd . && edit $DROPBOX/.secrets/passwords.txt"
-alias passwords="open /Applications/SQLiteManager.app $DROPBOX/passwords.sqlite"
 
-alias ison="cd $CODEHOME/ison-cdh"
-alias white="sudo ifconfig en0 192.168.0.10 && ssh -X 192.168.0.12"
-alias LASP="ssh -X dischner@trifid.lasp.colorado.edu"
 alias google="ping www.google.com"
 
 # cd:

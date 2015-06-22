@@ -47,7 +47,7 @@ export PATH=~/.cabal/bin:$PATH
 # Customize to your needs...
 source $HOME/.zachrc/.alias
 source $HOME/.zachrc/.func
-source $HOME/.zachrc/.greeter
+source $HOME/.zachrc/.greeter | lolcat --animate --duration 1 --speed 50
 
 # To find conda
 echo "Using the anaconda python environment"

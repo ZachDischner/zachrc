@@ -8,8 +8,8 @@ OS=`uname -sm`
 KERNEL=`uname -r`
 CPU=`uname -p`
 TIME=`uptime | awk '{print $1}'`
-TOTALMEM=`free -m -t | grep Total: | awk '{print $2}'`
-USEDMEM=`free -m -t | grep Total: | awk '{print $3}'`
+#TOTALMEM=`free -m -t | grep Total: | awk '{print $2}'`
+#USEDMEM=`free -m -t | grep Total: | awk '{print $3}'`
 MEM=`echo $USEDMEM"M" / $TOTALMEM"M"`
 echo "
                                                 ___ 
