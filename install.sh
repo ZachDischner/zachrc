@@ -10,6 +10,13 @@ unzip htop.zip
 sudo mv htop /bin
 rm htop.zip
 
+echo "Installing asciirec, a cool terminal recording session thingy"
+curl -sL https://asciinema.org/install | sh
+
+
+echo "Now running the brewInstalls script:"
+brewInstalls
+
 echo "Now go import the VPN files included in .zachrc/VPN,  using the Network utility,if you're using a mac"
 echo "Can also extract the encrypted zip file with keychains in them and move to ~/Library/Keychains"
 
