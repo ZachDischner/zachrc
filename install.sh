@@ -14,7 +14,7 @@ echo "Installing asciirec, a cool terminal recording session thingy"
 curl -sL https://asciinema.org/install | sh
 
 echo "Installing lolcat. Its pretty and awesome"
-sudo brew install lolcat
+sudo gem install lolcat
 
 
 echo "Now running the brewInstalls script:"
