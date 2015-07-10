@@ -1,14 +1,25 @@
 #!/bin/sh
+
+###### Install dev tools
+echo "Installing command line tools (should already be installedl..."
+xcode-select --install
+
+###### Change shell
+chsh -s $(which zsh)
+
+###### Install Brew
+echo "Installing homebrew: #ruby -e '$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)'"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+###### zshrc
+echo "Installing oh-my-zsh, then zachrc"
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+
 chmod a+x -R ./
 cp ~/.zshrc ~/.zshrc_back
 cp ./.zshrc_copy_to_home_dir ~/.zshrc
 chmod a+x ~/.zshrc
-
-echo "Trying to install htop"
-curl -O http://themainframe.ca/wp-content/uploads/2011/06/htop.zip
-unzip htop.zip
-sudo mv htop /bin
-rm htop.zip
 
 echo "Installing asciirec, a cool terminal recording session thingy"
 curl -sL https://asciinema.org/install | sh
@@ -16,12 +27,22 @@ curl -sL https://asciinema.org/install | sh
 echo "Installing lolcat. Its pretty and awesome"
 sudo gem install lolcat
 
-
 echo "Now running the brewInstalls script:"
 brewInstalls
 
-echo "Now go import the VPN files included in .zachrc/VPN,  using the Network utility,if you're using a mac"
+echo ""
+echo "Running CommandLineInstalls"
+CommandLineInstalls
+
 echo "Can also extract the encrypted zip file with keychains in them and move to ~/Library/Keychains"
+
+echo ""
+
+echo "Go download the anaconda python distribution"
+
+echo ""
+
+echo "Sign into dropbox, let it sync. Then run: mackup restore, this restores ssh keys and passwords and stuff"
 
 
 # Sublime settings: ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings                                                                          1 ↵ ──(Tue,Oct21)─┘

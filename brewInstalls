@@ -1,28 +1,36 @@
 brew doctor
 brew install python
-    pip install virtualenv
-    pip install virtualenvwrapper
-    pip install numpy
-    brew install gfortran
-    pip install scipy
-    brew install freetype
-    pip install ipython
-    pip install pandas
-    pip install bitstring
-    pip install xlrd
-    pip install openpyxl
-    pip install matplotlib   (might require a few upenvs and whatnot)
+pip install virtualenv
+pip install virtualenvwrapper
+pip install numpy
+brew install gfortran
+pip install scipy
+brew install freetype
+pip install ipython
+pip install pandas
+pip install bitstring
+pip install xlrd
+pip install openpyxl
+pip install matplotlib
+pip install easygui
+pip install coloredlogs
+pip install django
+pip install django-bootstrap
+pip install django-dajaxice
+pip install django-dajax-ng
 
 # install the QT libraries as described 
 # in the text below before continuing
 brew install pyqt
 brew install zmq
-    pip install pyzmq
-    pip install pygments
+pip install pyzmq
+pip install pygments
 
 
 ## Other brews
 brew install sqlitebrowser
+brew install git-glow
+brew install caffeine
 
 
 brew install caskroom/cask/brew-cask
@@ -36,15 +44,16 @@ brew cask install google-chrome
 brew cask install spotify
 brew cask install xee
 brew cask install transmission
-brew cask install adobe-photoshop-lightroom
+brew cask install lightroom3
 brew cask install vmware-fusion
 brew cask install bittorrent-sync
+brew cask install bettertouchtool
 
 
 # development
 brew cask install sublime-text3
 brew cask install filezilla
 brew cask install iterm2
-brew cask install source-tree
+brew cask install sourcetree
 brew cask install virtualbox
 brew cask install cyberduck
