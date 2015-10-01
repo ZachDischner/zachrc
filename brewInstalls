@@ -47,3 +47,4 @@ brew cask install iterm2
 brew cask install source-tree
 brew cask install virtualbox
 brew cask install cyberduck
+brew cask install dbvisualizer

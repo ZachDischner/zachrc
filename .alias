@@ -1,7 +1,6 @@
 #######  Zach's Environment setup!!!
 
 ###### For shits and giggles
-alias cat="lolcat"
 alias sl="echo '              Its '''ls''' you jackass, dont ever make this mistake again\n↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓what you meant↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓' | lolcat --animate --duration 3 && ls"
 
 ###### SwRI SSH

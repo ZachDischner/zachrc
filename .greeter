@@ -10,7 +10,7 @@ CPU=`uname -p`
 TIME=`uptime | awk '{print $1}'`
 #TOTALMEM=`free -m -t | grep Total: | awk '{print $2}'`
 #USEDMEM=`free -m -t | grep Total: | awk '{print $3}'`
-MEM=`echo $USEDMEM"M" / $TOTALMEM"M"`
+MEM=`echo 16Gb`
 echo "
                                                 ___ 
      \"May the force be with you.\"            ,o88888      
@@ -35,7 +35,7 @@ echo "
    .                     `echo $TIME` 
 "
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 #[[ -s "/home/kevin/.rvm/scripts/rvm" ]] && source "/home/kevin/.rvm/scripts/rvm"
 
 ### Added by the Heroku Toolbelt
