@@ -1,0 +1,6 @@
+pip install easygui
+pip install coloredlogs
+pip install django
+pip install django-bootstrap
+pip install django-dajaxice
+pip install django-dajax-ng
