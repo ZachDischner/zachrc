@@ -7,6 +7,9 @@ alias sl="echo '              Its '''ls''' you jackass, dont ever make this mist
 alias startSwriVpn='/usr/bin/snx -s vpn.swri.org -u zdischner'
 alias stopSwriVPN='/usr/bin/snx -d'
 
+###### CYGNSS-MOC
+alias cygred='ssh -X dischnerz@cygnss-red.spaceops.swri.edu'
+
 ###### Consolodating
 alias edit='subl'
 
