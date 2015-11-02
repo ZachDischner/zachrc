@@ -46,7 +46,7 @@ alias odot='open .'
 ###### SwRI
 export SWRI=$OWNCLOUD/SwRI
 alias goswri='cd $SWRI'
-alias gosimpl='cd /Users/zach/code/SIMPL'
+alias gosimpl='cd $CODE/SIMPL'
 alias oswri='open $SWRI'
 alias ixion='ssh -Y dischnerz@ixion.spaceops.swri.edu'
 export IXION=$HOME/ixion

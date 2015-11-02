@@ -51,6 +51,7 @@ brew cask install bettertouchtool
 
 
 # development
+brew tap caskroom/versions
 brew cask install sublime-text3
 brew cask install filezilla
 brew cask install iterm2
@@ -59,5 +60,9 @@ brew cask install virtualbox
 brew cask install cyberduck
 brew cask install dbvisualizer
 sudo brew cask install tunnelblick
+brew cask install sqlitebrowser
+bre cask install macdown
+
+# https://packagecontrol.io/installation#st3    - get package control and install things like autoAlign, Markdowneditor and stuff
 
 
