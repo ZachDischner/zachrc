@@ -59,6 +59,14 @@ alias swriproxy='ssh dischnerz@ssh.boulder.swri.edu -L 8080:perseus.boulder.swri
 	alias swrititan='ssh dischnerz@ssh.boulder.swri.edu -L 9099:titan:9100'
 	alias swriprinters='ssh -L 9099:titan:9100 -L 9101:uranus:9100 -L 9102:poster:9100 dischnerz@ssh.boulder.swri.edu'
 
+###### MOC Nav
+alias red='ssh -Y dischnerz@cygnss-red.spaceops.swri.edu'
+export MPL2IP=10.100.1.57
+alias gompl2='ssh -Y dischnerz@$MPL2IP'
+alias scpMPL2
+export MPL1IP=10.100.1.55
+alias gompl1='ssh -Y dischnerz@$MPL1IP'
+
 
 ###### Python
 alias setuppythondoxygen='git submodule add https://github.com/ZachDischner/DoxyDocs.git doc'
@@ -182,4 +190,7 @@ alias historyg='history | grep '
 # Update environment:
 alias upenv='source ~/.zshrc'
 alias updatebrew='brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup'
+
+# Fink
+source /sw/bin/init.sh
 

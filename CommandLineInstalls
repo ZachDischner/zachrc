@@ -4,3 +4,5 @@ pip install django
 pip install django-bootstrap
 pip install django-dajaxice
 pip install django-dajax-ng
+pip install django-bootstrap-toolkit
+pip install django-html5lib

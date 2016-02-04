@@ -62,7 +62,17 @@ brew cask install dbvisualizer
 sudo brew cask install tunnelblick
 brew cask install sqlitebrowser
 bre cask install macdown
+brew install Caskroom/cask/xquartz
+brew tap homebrew/x11
+brew install x11
+brew install yarp
+brew install tree
+brew install node
 
 # https://packagecontrol.io/installation#st3    - get package control and install things like autoAlign, Markdowneditor and stuff
+# AutoAligner
+# Tag
+# HTML5
+# HTML-CSS-JS Prettify
 
 

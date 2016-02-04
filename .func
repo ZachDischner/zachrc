@@ -75,3 +75,20 @@ egrep '^ *[0-9.]*M' /tmp/list
 egrep '^ *[0-9.]*G' /tmp/list
 rm /tmp/list
 }
+
+scpmplX ()
+{
+	echo "Copying $1 to $2:/home/dischnerz"
+	scp $1 dischnerz@$2:/home/dischnerz
+}
+
+scpmpl1 ()
+{
+	scpmplX	$1 $MPL1IP
+}
+
+scpmpl2 ()
+{
+	scpmplX	$1 $MPL2IP
+}
+
