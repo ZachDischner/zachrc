@@ -68,6 +68,13 @@ brew install x11
 brew install yarp
 brew install tree
 brew install node
+brew install haskell-platform
+brew install cabal
+brew install boost
+brew install boost-python
+
+## PyGMO Install From Source
+# http://esa.github.io/pygmo/install.html
 
 # https://packagecontrol.io/installation#st3    - get package control and install things like autoAlign, Markdowneditor and stuff
 # AutoAligner

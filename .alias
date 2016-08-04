@@ -26,6 +26,10 @@ export OWNCLOUD=$HOME/OwnCloud
 # Used for python utils
 export ZDUTILS=$CODE/ZD_Utils
 
+###### Servers 
+export OCEANIP=45.55.160.171
+alias goocean='ssh $OCEANIP'
+
 
 ###### Nav aliases
 alias gocode='cd $CODE'
@@ -46,7 +50,7 @@ alias odot='open .'
 ###### SwRI
 export SWRI=$OWNCLOUD/SwRI
 alias goswri='cd $SWRI'
-alias gosimpl='cd $CODE/SIMPL'
+alias gosimpl='cd $CODE/ppi'
 alias oswri='open $SWRI'
 alias ixion='ssh -Y dischnerz@ixion.spaceops.swri.edu'
 export IXION=$HOME/ixion
@@ -75,18 +79,12 @@ alias setuppythonzdutil='git submodule add git@github.com:ZachDischner/ZD-Utils.
 alias newpythonproject='$ZACHRC/NewPythonProject.sh'
 
 alias syspython='/usr/bin/python'
-alias ip='ipython --pylab'
+alias ipy='ipython --pylab'
 alias ipn='ipython notebook'
 
-	#Canopy/Enthought setup:   http://docs.enthought.com/canopy/configure/canopy-cli.html
-	# run <canopycli setup $DIR > to make local executable enthought python area
-	# Make this default by "Please set $CODE/pythons/EnthoughtPython/bin in your PATH."
-	alias canopycli='/Applications/Canopy.app/Contents/MacOS/Canopy_cli' 
-	alias enpython='$CODE/pythons/EnthoughtPython/bin/python'
-	alias enipython='$CODE/pythons/EnthoughtPython/bin/ipython'
-	alias enpkg='$CODE/pythons/EnthoughtPython/bin/enpkg'   #ex >>enpkg pandas
-	alias enipn='enipython notebook --pylab inline'
 
+###### Haskell
+alias ihk='ipython console --kernel haskell'
 
 # Applications
 alias spotify="open /Applications/Spotify.app"

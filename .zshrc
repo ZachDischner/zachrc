@@ -33,7 +33,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rails ruby python github git-flow osx sublime themes debian gem brew battery rvm lol virtualenvwrapper)
+plugins=(git rails ruby python github git-flow osx sublime themes debian gem brew battery rvm lol virtualenvwrapper zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -52,3 +52,6 @@ source $HOME/.zachrc/.greeter | lolcat --animate --duration 1 --speed 50
 # To find conda
 echo "Using the anaconda python environment"
 export PATH="//anaconda/bin:$PATH"
+
+#Faster terminal writing (key repeat)
+defaults write NSGlobalDomain KeyRepeat -int 0
