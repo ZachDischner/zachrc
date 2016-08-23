@@ -164,6 +164,14 @@ alias nano='nano -w'
 # sublime	
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 
+# vi - using mac improved and up-to-date one
+if [ -f /usr/local/bin/vims ];then
+        alias vi="/usr/local/bin/vim"
+        alias vim="/usr/local/bin/vi"
+    else
+        echo "Hey! Install latest vim: brew install vim"
+fi
+
 # df:
 alias df='df -T'
 alias dfh='df -hT'
@@ -187,7 +195,7 @@ alias historyg='history | grep '
 
 # Update environment:
 alias upenv='source ~/.zshrc'
-alias updatebrew='brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup'
+alias updatebrew='brew update && brew-cask update && brew cleanup && brew cask cleanup'
 
 # Fink
 source /sw/bin/init.sh
