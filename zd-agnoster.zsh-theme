@@ -128,28 +128,12 @@ prompt_git() {
       prompt_segment green black
     fi
 
-    # if [[ -e "${repo_path}/BISECT_LOG" ]]; then
-    #   mode=" <B>"
-    # elif [[ -e "${repo_path}/MERGE_HEAD" ]]; then
-    #   mode=" >M<"
-    # elif [[ -e "${repo_path}/rebase" || -e "${repo_path}/rebase-apply" || -e "${repo_path}/rebase-merge" || -e "${repo_path}/../.dotest" ]]; then
-    #   mode=" >R>"
-    # fi
+    # setopt promptsubst
 
-    setopt promptsubst
-    autoload -Uz vcs_info
-
-    zstyle ':vcs_info:*' enable git
-    zstyle ':vcs_info:*' get-revision true
-    zstyle ':vcs_info:*' check-for-changes true
-    zstyle ':vcs_info:*' stagedstr '✚'
-    zstyle ':vcs_info:*' unstagedstr '●'
-    zstyle ':vcs_info:*' formats ' %u%c'
-    zstyle ':vcs_info:*' actionformats ' %u%c'
-    vcs_info
-    echo -n "`git_prompt_info` `git_prompt_status`$PL_BRANCH_CHAR${vcs_info_msg_0_%%}%{$reset_color%}"
-    prompt_segment default yellow
+    GITPROMPT="`git_prompt_info` $PL_BRANCH_CHAR %{$reset_color%}"
+    echo -n $GITPROMPT
   fi
+  prompt_segment default default
 }
 
 prompt_hg() {
@@ -206,7 +190,8 @@ prompt_right(){
   # return_code="%{$reset_color%} %(?..%{$fg[red]%}%? %{$reset_color%})" # not used for now
   RPROMPT="$PR_YELLOW%D{%a,%b%d %H:%M:%S})$PR_NO_COLOUR"
 
-  echo -n "${(e)PR_FILLBAR}"
+  # echo -n "${(e)PR_FILLBAR}"
+  prompt_segment default default "${(e)PR_FILLBAR}"
   echo -n $RPROMPT
 }
 
@@ -221,30 +206,25 @@ function theme_precmd {
     PR_FILLBAR=""
     PR_PWDLEN=""
     setopt promptsubst
-    autoload -Uz vcs_info
 
-    zstyle ':vcs_info:*' enable git
-    zstyle ':vcs_info:*' get-revision true
-    zstyle ':vcs_info:*' check-for-changes true
-    zstyle ':vcs_info:*' stagedstr '✚'
-    zstyle ':vcs_info:*' unstagedstr '●'
-    zstyle ':vcs_info:*' formats ' %u%c'
-    zstyle ':vcs_info:*' actionformats ' %u%c'
-    vcs_info
+    # local promptsize=${#${(%):-(%~)()}}
+    if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
+      GITPROMPT="`git_prompt_info` $PL_BRANCH_CHAR %{$reset_color%}"
+      local gitpromptsize=${#${GITPROMPT}}
+      local padding=15
+    else
+      local gitpromptsize=0
+      local padding=22
+    fi
 
-    local promptsize=${#${(%):---(%~)---()--}}
-    local gitpromptinfo="`git_prompt_info` `git_prompt_status`$PL_BRANCH_CHAR${vcs_info_msg_0_%% } "
-    local gitpromptsize=${#${gitpromptinfo}}
     local pwdsize=${#${(%):-%~}}
     local statussize=4
-    local padding=3
-    if [[ $gitpromptsize -le 3 ]]; then padding=5; fi
-    if [[ $gitpromptsize -eq 14 ]]; then padding=3; fi
+
 
     if [[ "$promptsize + $gitpromptsize + $pwdsize" -gt $TERMWIDTH ]]; then
       ((PR_PWDLEN=$TERMWIDTH - $promptsize))
     else
-      PR_FILLBAR="\${(l.(($TERMWIDTH - ($promptsize + $gitpromptsize + $pwdsize + $statussize) - $padding))...)}"
+      PR_FILLBAR="\${(l.(($TERMWIDTH - ($gitpromptsize + $pwdsize + $statussize) - $padding))...)}"
     fi
 
 }
@@ -252,8 +232,6 @@ function theme_precmd {
 
 # Status:
 # - was there an error
-# - am I root
-# - are there background jobs?
 prompt_status() {
   local symbols
   local bgc
@@ -265,9 +243,6 @@ prompt_status() {
     symbols+="%{%F{black}%}\u2714 "
     prompt_segment green default "$symbols"
   fi
-  # [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
-  # [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
-  # [[ -n "$symbols" ]] && prompt_segment bgc default "$symbols"
 }
 
 ## Main prompt
@@ -278,7 +253,6 @@ build_prompt() {
   prompt_context
   prompt_dir
   prompt_git
-  #prompt_hg   # Don't use hg, slows the prompt
   prompt_right
   prompt_newline
   prompt_end

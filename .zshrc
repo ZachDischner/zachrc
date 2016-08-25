@@ -7,6 +7,7 @@ ZSH=$HOME/.oh-my-zsh
 #
 # Z's faves: jonathan, agnoster, miloshadzic (kinda wanna make my own, fix the clutteredness on left and add patched fonts...)
 ZSH_THEME="zd-agnoster" #"jonathan"
+if [[ $1 ]] then ZSH_THEME="zd-jonathan";fi
 
 # Declutter the command line (removes zach@zachs-macbook-pro...)
 export DEFAULT_USER="zach"
@@ -50,7 +51,7 @@ export PATH=~/.cabal/bin:$PATH
 # Customize to your needs...
 source $HOME/.zachrc/.alias
 source $HOME/.zachrc/.func
-#source $HOME/.zachrc/.greeter | lolcat --animate --duration 1 --speed 50
+source $HOME/.zachrc/.greeter | lolcat --animate --duration 1 --speed 50
 
 # To find conda
 echo "Using the anaconda python environment"
