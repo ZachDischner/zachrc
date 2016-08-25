@@ -181,16 +181,19 @@ prompt_dir() {
 
 # Virtualenv: current working virtualenv
 prompt_virtualenv() {
+  VENVSIZE=0
   local virtualenv_path="$VIRTUAL_ENV"
   if [[ -n $virtualenv_path && -n $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
-    prompt_segment blue red "(`basename $virtualenv_path`)"
+    VENV="(`basename $virtualenv_path`)"
+    prompt_segment blue red $VENV
+    VENVSIZE=${#${VENV}}
   fi
 }
 
 ##ZD
 prompt_right(){
   # return_code="%{$reset_color%} %(?..%{$fg[red]%}%? %{$reset_color%})" # not used for now
-  RPROMPT="$PR_YELLOW%D{%a,%b%d %H:%M:%S})$PR_NO_COLOUR"
+  RPROMPT="$PR_YELLOW%D{%a,%b %d %H:%M:%S})$PR_NO_COLOUR"
 
   # echo -n "${(e)PR_FILLBAR}"
   prompt_segment default default "${(e)PR_FILLBAR}"
@@ -209,11 +212,18 @@ function right_justify_calc {
     PR_PWDLEN=""
     setopt promptsubst
 
-    local padding=15
-    
+    # Git prompt part (dynamic)
+    local padding=16
     # Kinda had to do this by eye... confused? Yes. 
-    if [[ $gitpromptsize -eq 12 ]] then padding=10; fi
+    if [[ $gitpromptsize -eq 12 ]] then padding=11; fi
 
+    # Conda environment part (dynamic)
+    local plen=26   # regular length of $PROMPT, dynamically changes with conda?
+    local ps1len=${#${PS1}}
+    local extra="$((ps1len-plen-24))"
+
+    # Can extract the conda part maybe? (python35)%{%f%b%k%}$(build_prompt)
+    
     local pwdsize=${#${(%):-%~}}
     local statussize=4
 
@@ -221,7 +231,7 @@ function right_justify_calc {
     if [[ "$promptsize + $gitpromptsize + $pwdsize" -gt $TERMWIDTH ]]; then
       ((PR_PWDLEN=$TERMWIDTH - $promptsize))
     else
-      PR_FILLBAR="\${(l.(($TERMWIDTH - ($gitpromptsize + $pwdsize + $statussize) - $padding))...)}"
+      PR_FILLBAR="\${(l.(($TERMWIDTH - ($extra + $gitpromptsize + $pwdsize + $statussize) - $padding))...)}"
     fi
 
 }
