@@ -208,13 +208,13 @@ function theme_precmd {
     setopt promptsubst
 
     # local promptsize=${#${(%):-(%~)()}}
+    local padding=22
+    local gitpromptsize=0
+
     if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
       GITPROMPT="`git_prompt_info` $PL_BRANCH_CHAR %{$reset_color%}"
       local gitpromptsize=${#${GITPROMPT}}
-      local padding=15
-    else
-      local gitpromptsize=0
-      local padding=22
+      padding=15
     fi
 
     local pwdsize=${#${(%):-%~}}
