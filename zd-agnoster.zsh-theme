@@ -88,7 +88,7 @@ prompt_end() {
 # Thanks http://thisismecoding.com/multine-agnoster-oh-my-zsh/
 prompt_newline() {
   if [[ -n $CURRENT_BG ]]; then
-    echo -n "%{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR
+    echo -n "%{%k%F{$CURRENT_BG}%}
 %{%k%F{blue}%}$SEGMENT_SEPARATOR"
   else
     echo -n "%{%k%}"
@@ -147,7 +147,8 @@ prompt_git() {
     zstyle ':vcs_info:*' formats ' %u%c'
     zstyle ':vcs_info:*' actionformats ' %u%c'
     vcs_info
-    echo -n "`git_prompt_info` `git_prompt_status`$PL_BRANCH_CHAR${vcs_info_msg_0_%% }%{$reset_color%}"
+    echo -n "`git_prompt_info` `git_prompt_status`$PL_BRANCH_CHAR${vcs_info_msg_0_%%}%{$reset_color%}"
+    prompt_segment default yellow
   fi
 }
 
@@ -236,9 +237,9 @@ function theme_precmd {
     local gitpromptsize=${#${gitpromptinfo}}
     local pwdsize=${#${(%):-%~}}
     local statussize=4
-    local padding=1
+    local padding=3
     if [[ $gitpromptsize -le 3 ]]; then padding=5; fi
-    if [[ $gitpromptsize -eq 15 ]]; then padding=1; fi
+    if [[ $gitpromptsize -eq 14 ]]; then padding=3; fi
 
     if [[ "$promptsize + $gitpromptsize + $pwdsize" -gt $TERMWIDTH ]]; then
       ((PR_PWDLEN=$TERMWIDTH - $promptsize))
