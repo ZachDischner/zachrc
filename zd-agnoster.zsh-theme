@@ -119,6 +119,8 @@ prompt_git() {
   local ref dirty mode repo_path
   repo_path=$(git rev-parse --git-dir 2>/dev/null)
 
+  GITPROMPT="`git_prompt_info` $PL_BRANCH_CHAR %{$reset_color%}"
+
   if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
     dirty=$(parse_git_dirty)
     ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git rev-parse --short HEAD 2> /dev/null)"
@@ -130,9 +132,9 @@ prompt_git() {
 
     # setopt promptsubst
 
-    GITPROMPT="`git_prompt_info` $PL_BRANCH_CHAR %{$reset_color%}"
     echo -n $GITPROMPT
   fi
+  gitpromptsize=${#${GITPROMPT}}
   prompt_segment default default
 }
 
@@ -195,7 +197,7 @@ prompt_right(){
   echo -n $RPROMPT
 }
 
-function theme_precmd {
+function right_justify_calc {
     local TERMWIDTH
     (( TERMWIDTH = ${COLUMNS} - 1 ))
 
@@ -207,15 +209,10 @@ function theme_precmd {
     PR_PWDLEN=""
     setopt promptsubst
 
-    # local promptsize=${#${(%):-(%~)()}}
-    local padding=22
-    local gitpromptsize=0
-
-    if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
-      GITPROMPT="`git_prompt_info` $PL_BRANCH_CHAR %{$reset_color%}"
-      local gitpromptsize=${#${GITPROMPT}}
-      padding=15
-    fi
+    local padding=15
+    
+    # Kinda had to do this by eye... confused? Yes. 
+    if [[ $gitpromptsize -eq 12 ]] then padding=10; fi
 
     local pwdsize=${#${(%):-%~}}
     local statussize=4
@@ -253,12 +250,10 @@ build_prompt() {
   prompt_context
   prompt_dir
   prompt_git
+  right_justify_calc
   prompt_right
   prompt_newline
   prompt_end
 }
 
 PROMPT='%{%f%b%k%}$(build_prompt) '
-
-autoload -U add-zsh-hook
-add-zsh-hook precmd  theme_precmd
