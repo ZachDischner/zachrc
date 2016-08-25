@@ -26,7 +26,7 @@ export OWNCLOUD=$HOME/OwnCloud
 # Used for python utils
 export ZDUTILS=$CODE/ZD_Utils
 
-###### Servers 
+###### Servers
 export OCEANIP=45.55.160.171
 alias goocean='ssh $OCEANIP'
 
@@ -58,10 +58,10 @@ alias goixion='cd $IXION'
 alias upixion="rsync -avz -e ssh $IXION dischnerz@ixion.boulder.swri.edu:'/home/dischnerz/'"
 alias swri='ssh -X dischnerz@ssh.boulder.swri.edu'
 alias swriproxy='ssh dischnerz@ssh.boulder.swri.edu -L 8080:perseus.boulder.swri.edu:8080'
-	# Printers
-	# Titan, 5th floor
-	alias swrititan='ssh dischnerz@ssh.boulder.swri.edu -L 9099:titan:9100'
-	alias swriprinters='ssh -L 9099:titan:9100 -L 9101:uranus:9100 -L 9102:poster:9100 dischnerz@ssh.boulder.swri.edu'
+    # Printers
+    # Titan, 5th floor
+    alias swrititan='ssh dischnerz@ssh.boulder.swri.edu -L 9099:titan:9100'
+    alias swriprinters='ssh -L 9099:titan:9100 -L 9101:uranus:9100 -L 9102:poster:9100 dischnerz@ssh.boulder.swri.edu'
 
 ###### MOC Nav
 alias red='ssh -Y dischnerz@cygnss-red.spaceops.swri.edu'
@@ -161,13 +161,13 @@ alias lstar='tar -tzf'
 # nano:
 alias nano='nano -w'
 
-# sublime	
+# sublime
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 
 # vi - using mac improved and up-to-date one
-if [ -f /usr/local/bin/vims ];then
+if [ -f /usr/local/bin/vim ];then
         alias vi="/usr/local/bin/vim"
-        alias vim="/usr/local/bin/vi"
+        alias vim="/usr/local/bin/vim"
     else
         echo "Hey! Install latest vim: brew install vim"
 fi

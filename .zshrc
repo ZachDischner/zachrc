@@ -3,10 +3,13 @@ ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="jonathan"
-#cool themes are "fox" "jonathan" "josh" (nicely laid out, perfect for rails), "fino-time" "nanotech" 
+# Optionally, if you set this to "random", it'll load a random theme each time that oh-my-zsh is loaded.
+#
+# Z's faves: jonathan, agnoster, miloshadzic (kinda wanna make my own, fix the clutteredness on left and add patched fonts...)
+ZSH_THEME="agnoster" #"jonathan"
+
+# Declutter the command line (removes zach@zachs-macbook-pro...)
+export DEFAULT_USER="zach"
 
 # Example aliases
 alias zshconfig="subl ~/.zshrc"
