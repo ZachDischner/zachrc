@@ -6,7 +6,7 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each time that oh-my-zsh is loaded.
 #
 # Z's faves: jonathan, agnoster, miloshadzic (kinda wanna make my own, fix the clutteredness on left and add patched fonts...)
-ZSH_THEME="agnoster" #"jonathan"
+ZSH_THEME="zd-agnoster" #"jonathan"
 
 # Declutter the command line (removes zach@zachs-macbook-pro...)
 export DEFAULT_USER="zach"
@@ -50,7 +50,7 @@ export PATH=~/.cabal/bin:$PATH
 # Customize to your needs...
 source $HOME/.zachrc/.alias
 source $HOME/.zachrc/.func
-source $HOME/.zachrc/.greeter | lolcat --animate --duration 1 --speed 50
+#source $HOME/.zachrc/.greeter | lolcat --animate --duration 1 --speed 50
 
 # To find conda
 echo "Using the anaconda python environment"
