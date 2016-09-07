@@ -20,6 +20,8 @@ chmod a+x -R ./
 cp ~/.zshrc ~/.zshrc_back
 cp ./.zshrc_copy_to_home_dir ~/.zshrc
 chmod a+x ~/.zshrc
+cp ./.vimrc ~
+cp zd-agnoster-.zsh-theme ~/.oh-my-zsh/themes
 
 echo "Installing asciirec, a cool terminal recording session thingy"
 curl -sL https://asciinema.org/install | sh
