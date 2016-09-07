@@ -1,5 +1,5 @@
 # vim:ft=zsh ts=2 sw=2 sts=2
-#
+# Zach's modified agnoster theme. Faster, simpler, prettier? IMHO at least.
 # agnoster's Theme - https://gist.github.com/3712874
 # A Powerline-inspired theme for ZSH
 #
@@ -52,10 +52,15 @@ PR_NO_COLOUR="%{$terminfo[sgr0]%}"
   # what font the user is viewing this source code in. Do not replace the
   # escape sequence with a single literal character.
   # Do not change this! Do not make it '\u2b80'; that is the old, wrong code point.
+  #
+  # Zach's additions here to reference some other fun unicode characters
   U_WEDGE=$'\ue0b0'
   SEGMENT_SEPARATOR=$U_WEDGE
   U_ARROWS=$'\u21f6'
   PL_BRANCH_CHAR=$'\ue0a0'
+  U_RADIOACTIVE=$'\u2623'
+  U_SICKLE=$'\u262d'
+  U_SKULL=$'\u2620'
 }
 
 # Begin a segment
@@ -193,7 +198,7 @@ prompt_virtualenv() {
 ##ZD
 prompt_right(){
   # return_code="%{$reset_color%} %(?..%{$fg[red]%}%? %{$reset_color%})" # not used for now
-  RPROMPT="$PR_YELLOW%D{%a,%b %d %H:%M:%S})$PR_NO_COLOUR"
+  RPROMPT="$U_RADIOACTIVE $PR_YELLOW%D{%a,%b %d %H:%M:%S}$PR_NO_COLOUR"
 
   # echo -n "${(e)PR_FILLBAR}"
   prompt_segment default default "${(e)PR_FILLBAR}"
@@ -213,9 +218,9 @@ function right_justify_calc {
     setopt promptsubst
 
     # Git prompt part (dynamic)
-    local padding=16
+    local padding=17
     # Kinda had to do this by eye... confused? Yes. 
-    if [[ $gitpromptsize -eq 12 ]] then padding=11; fi
+    if [[ $gitpromptsize -eq 12 ]] then padding=12; fi
 
     # Conda environment part (dynamic)
     local plen=26   # regular length of $PROMPT, dynamically changes with conda?
@@ -243,6 +248,7 @@ prompt_status() {
   local symbols
   local bgc
   symbols=()
+  CURRENT_BG='NONE'
   if [[ $RETVAL -ne 0 ]]; then
     symbols+="%{%F{black}%}✘ "
     prompt_segment red default "$symbols"
@@ -265,5 +271,4 @@ build_prompt() {
   prompt_newline
   prompt_end
 }
-
-PROMPT='%{%f%b%k%}$(build_prompt) '
+PROMPT='%{%f%b%k%}$(build_prompt)% '
