@@ -52,6 +52,7 @@ brew cask install bettertouchtool
 
 # development
 brew install vim
+brew install zsh-syntax-highlighting
 brew tap caskroom/versions
 brew tap homebrew/science
 brew tap homebrew/x11

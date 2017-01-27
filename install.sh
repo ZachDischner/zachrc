@@ -23,6 +23,10 @@ chmod a+x ~/.zshrc
 cp ./.vimrc ~
 cp zd-agnoster-.zsh-theme ~/.oh-my-zsh/themes
 
+echo "Creating VIM backup directories"
+mkdir ~/.vim/backup
+mkdir ~/.vim/tmp
+
 echo "Installing asciirec, a cool terminal recording session thingy"
 curl -sL https://asciinema.org/install | sh
 

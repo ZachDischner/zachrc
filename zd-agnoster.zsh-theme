@@ -61,6 +61,7 @@ PR_NO_COLOUR="%{$terminfo[sgr0]%}"
   U_RADIOACTIVE=$'\u2623'
   U_SICKLE=$'\u262d'
   U_SKULL=$'\u2620'
+  U_SNAKE=$'\U1F40D'
 }
 
 # Begin a segment
@@ -136,7 +137,7 @@ prompt_git() {
     fi
 
     # setopt promptsubst
-
+ 
     echo -n $GITPROMPT
   fi
   gitpromptsize=${#${GITPROMPT}}
@@ -198,7 +199,7 @@ prompt_virtualenv() {
 ##ZD
 prompt_right(){
   # return_code="%{$reset_color%} %(?..%{$fg[red]%}%? %{$reset_color%})" # not used for now
-  RPROMPT="$U_RADIOACTIVE $PR_YELLOW%D{%a,%b %d %H:%M:%S}$PR_NO_COLOUR"
+  RPROMPT="$U_SNAKE ~$PR_GREEN$CONDA_DEFAULT_ENV$PR_NO_COLOUR~$U_RADIOACTIVE $PR_YELLOW%D{%a,%b %d %H:%M:%S}$PR_NO_COLOUR"
 
   # echo -n "${(e)PR_FILLBAR}"
   prompt_segment default default "${(e)PR_FILLBAR}"
@@ -207,7 +208,8 @@ prompt_right(){
 
 function right_justify_calc {
     local TERMWIDTH
-    (( TERMWIDTH = ${COLUMNS} - 1 ))
+    #                  | ??  (13 in - 54) or (15 in - 1)
+    (( TERMWIDTH = ${COLUMNS} - 66 ))
 
 
     ###
@@ -223,9 +225,10 @@ function right_justify_calc {
     if [[ $gitpromptsize -eq 12 ]] then padding=12; fi
 
     # Conda environment part (dynamic)
-    local plen=26   # regular length of $PROMPT, dynamically changes with conda?
+    local plen=58   # regular length of $PROMPT, dynamically changes with conda?
     local ps1len=${#${PS1}}
-    local extra="$((ps1len-plen-24))"
+    local condalen=${#${CONDA_DEFAULT_ENV}}
+    local extra="$((ps1len-plen+condalen))"
 
     # Can extract the conda part maybe? (python35)%{%f%b%k%}$(build_prompt)
     

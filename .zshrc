@@ -6,7 +6,8 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each time that oh-my-zsh is loaded.
 #
 # Z's faves: jonathan, agnoster, miloshadzic (kinda wanna make my own, fix the clutteredness on left and add patched fonts...)
-ZSH_THEME="zd-agnoster" #"jonathan"
+ZSH_THEME="zd-agnoster" # My favorite and fastest, but kinda tweaky. Small changes mean you need to readjust padding
+# ZSH_THEME="powerlevel9k/powerlevel9k"    # This one is dope but kinda slow
 #if [[ $1 ]] then ZSH_THEME="zd-jonathan";fi
 
 # Declutter the command line (removes zach@zachs-macbook-pro...)
@@ -55,7 +56,17 @@ source $HOME/.zachrc/.greeter | lolcat --animate --duration 1 --speed 50
 
 # To find conda
 echo "Using the anaconda python environment"
-export PATH="//anaconda/bin:$PATH"
+export PATH="$HOME/anaconda3/bin:$PATH"
 
 #Faster terminal writing (key repeat)
 defaults write NSGlobalDomain KeyRepeat -int 0
+
+source $HOME/.oh-my-git/prompt.sh
+
+## ZSH syntax highlighting and autosuggestions
+# https://github.com/zsh-users/zsh-autosuggestions#oh-my-zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
+# TO BRING BACK THE CONDA PROMPT PREPENDING THE ORIGINAL PROMPT, UNCOMMENT LINES IN ~/anaconda/bin/activate 77-96
