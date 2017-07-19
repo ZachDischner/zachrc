@@ -16,8 +16,7 @@ pip install easygui
 pip install coloredlogs
 pip install django
 pip install django-bootstrap
-pip install django-dajaxice
-pip install django-dajax-ng
+
 
 # install the QT libraries as described 
 # in the text below before continuing
@@ -48,6 +47,7 @@ brew cask install lightroom3
 brew cask install vmware-fusion
 brew cask install bittorrent-sync
 brew cask install bettertouchtool
+brew cask install libreoffice
 
 
 # development

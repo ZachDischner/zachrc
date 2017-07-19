@@ -58,8 +58,11 @@ source $HOME/.zachrc/.greeter | lolcat --animate --duration 1 --speed 50
 echo "Using the anaconda python environment"
 export PATH="$HOME/anaconda3/bin:$PATH"
 
+# To find xgboost library systemwide
+export PYTHONPATH=~/code/libs/xgboost/python-package
+
 #Faster terminal writing (key repeat)
-defaults write NSGlobalDomain KeyRepeat -int 0
+defaults write NSGlobalDomain KeyRepeat -int 1
 
 source $HOME/.oh-my-git/prompt.sh
 

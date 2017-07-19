@@ -80,7 +80,7 @@ alias newpythonproject='$ZACHRC/NewPythonProject.sh'
 
 alias syspython='/usr/bin/python'
 alias ipy='ipython --pylab'
-alias ipn='ipython notebook'
+alias ipn='jupyter notebook'
 
 
 ###### Haskell
