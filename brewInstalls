@@ -12,10 +12,7 @@ pip install bitstring
 pip install xlrd
 pip install openpyxl
 pip install matplotlib
-pip install easygui
 pip install coloredlogs
-pip install django
-pip install django-bootstrap
 
 
 # install the QT libraries as described 

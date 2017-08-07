@@ -53,10 +53,12 @@ export PATH=~/.cabal/bin:$PATH
 source $HOME/.zachrc/.alias
 source $HOME/.zachrc/.func
 source $HOME/.zachrc/.greeter | lolcat --animate --duration 1 --speed 50
+source $HOME/.zachrc/.amazon
 
 # To find conda
 echo "Using the anaconda python environment"
-export PATH="$HOME/anaconda3/bin:$PATH"
+#export PATH="$HOME/anaconda3/bin:$PATH"
+export PATH="/anaconda/bin:$PATH"
 
 # To find xgboost library systemwide
 export PYTHONPATH=~/code/libs/xgboost/python-package
@@ -64,12 +66,16 @@ export PYTHONPATH=~/code/libs/xgboost/python-package
 #Faster terminal writing (key repeat)
 defaults write NSGlobalDomain KeyRepeat -int 1
 
-source $HOME/.oh-my-git/prompt.sh
+# source $HOME/.oh-my-git/prompt.sh
 
 ## ZSH syntax highlighting and autosuggestions
 # https://github.com/zsh-users/zsh-autosuggestions#oh-my-zsh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+## Completions
+#/usr/local/etc/bash_completion.d/git-completion.bash
+/usr/local/etc/bash_completion.d/brew
 
 # TO BRING BACK THE CONDA PROMPT PREPENDING THE ORIGINAL PROMPT, UNCOMMENT LINES IN ~/anaconda/bin/activate 77-96

@@ -3,13 +3,6 @@
 ###### For shits and giggles
 alias sl="echo '              Its '''ls''' you jackass, dont ever make this mistake again\n↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓what you meant↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓' | lolcat --animate --duration 3 && ls"
 
-###### SwRI SSH
-alias startSwriVpn='/usr/bin/snx -s vpn.swri.org -u zdischner'
-alias stopSwriVPN='/usr/bin/snx -d'
-
-###### CYGNSS-MOC
-alias cygred='ssh -X dischnerz@cygnss-red.spaceops.swri.edu'
-
 ###### Consolodating
 alias edit='subl'
 
@@ -23,6 +16,7 @@ export DROPBOX=$HOME/Dropbox
 export DRIVE=$HOME/Google\ Drive
 export ZACHRC=$HOME/.zachrc
 export OWNCLOUD=$HOME/OwnCloud
+
 # Used for python utils
 export ZDUTILS=$CODE/ZD_Utils
 
@@ -46,31 +40,6 @@ alias ocloud='open $OWNCLOUD'
 alias gozachrc='cd $ZACHRC'
 alias ozachrc='open $ZACHRC'
 alias odot='open .'
-
-###### SwRI
-export SWRI=$OWNCLOUD/SwRI
-alias goswri='cd $SWRI'
-alias gosimpl='cd $CODE/ppi'
-alias oswri='open $SWRI'
-alias ixion='ssh -Y dischnerz@ixion.spaceops.swri.edu'
-export IXION=$HOME/ixion
-alias goixion='cd $IXION'
-alias upixion="rsync -avz -e ssh $IXION dischnerz@ixion.boulder.swri.edu:'/home/dischnerz/'"
-alias swri='ssh -X dischnerz@ssh.boulder.swri.edu'
-alias swriproxy='ssh dischnerz@ssh.boulder.swri.edu -L 8080:perseus.boulder.swri.edu:8080'
-    # Printers
-    # Titan, 5th floor
-    alias swrititan='ssh dischnerz@ssh.boulder.swri.edu -L 9099:titan:9100'
-    alias swriprinters='ssh -L 9099:titan:9100 -L 9101:uranus:9100 -L 9102:poster:9100 dischnerz@ssh.boulder.swri.edu'
-
-###### MOC Nav
-alias red='ssh -Y dischnerz@cygnss-red.spaceops.swri.edu'
-export MPL2IP=10.100.1.57
-alias gompl2='ssh -Y dischnerz@$MPL2IP'
-alias scpMPL2
-export MPL1IP=10.100.1.55
-alias gompl1='ssh -Y dischnerz@$MPL1IP'
-
 
 ###### Python
 alias setuppythondoxygen='git submodule add https://github.com/ZachDischner/DoxyDocs.git doc'
