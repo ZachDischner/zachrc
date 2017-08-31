@@ -6,7 +6,7 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each time that oh-my-zsh is loaded.
 #
 # Z's faves: jonathan, agnoster, miloshadzic (kinda wanna make my own, fix the clutteredness on left and add patched fonts...)
-ZSH_THEME="zd-agnoster" # My favorite and fastest, but kinda tweaky. Small changes mean you need to readjust padding
+ZSH_THEME="bullet-train" # "zd-agnoster" # My favorite and fastest, but kinda tweaky. Small changes mean you need to readjust padding
 # ZSH_THEME="powerlevel9k/powerlevel9k"    # This one is dope but kinda slow
 #if [[ $1 ]] then ZSH_THEME="zd-jonathan";fi
 
@@ -58,7 +58,7 @@ source $HOME/.zachrc/.amazon
 # To find conda
 echo "Using the anaconda python environment"
 #export PATH="$HOME/anaconda3/bin:$PATH"
-export PATH="/anaconda/bin:$PATH"
+export PATH="$PATH:/anaconda/bin"
 
 # To find xgboost library systemwide
 export PYTHONPATH=~/code/libs/xgboost/python-package
@@ -79,3 +79,7 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 /usr/local/etc/bash_completion.d/brew
 
 # TO BRING BACK THE CONDA PROMPT PREPENDING THE ORIGINAL PROMPT, UNCOMMENT LINES IN ~/anaconda/bin/activate 77-96
+
+
+# Anaconda curl messes with everything!
+# alias curl='/usr/bin/curl'
